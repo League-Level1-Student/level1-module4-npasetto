@@ -41,8 +41,11 @@ public void keyPressed(KeyEvent arg0) {
 }
 @Override
 public void keyReleased(KeyEvent arg0) {
-	if((arg0.getKeyChar()+"")==currentLetter){
+	if((arg0.getKeyChar()+"").equals(currentLetter)){
 		System.out.println("correct");
+		panel.setBackground(new Color(0,255,0));
+	}else {
+		System.out.println("incorrect");
 		panel.setBackground(new Color(255,0,0));
 	}
 	currentLetter=generateRandomLetter();
